@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales - Rice Store Inventory System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="sales.js"></script>
+  <script defer src="reports.js"></script>
+</head>
+<body>
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggleBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <span class="header-title">Sales</span>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <aside class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="Inventory.html"><i class="fas fa-boxes"></i> Inventory</a></li>
+      <li><a href="sales.html"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+      <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+    </ul>
+    <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </aside>
+
+
+  <div class="main-container">
+  <h1>SALES</h1>
+  <form id="salesForm">
+    <input type="text" id="saleItemName" placeholder="Rice Type (e.g., Sinandomeng)" required />
+    <input type="number" id="saleQuantity" placeholder="Number of Kilo(kg)" required />
+    <input type="number" id="salePrice" placeholder="Kilo Price(kg)" required />
+    <button type="submit">Add to Sale</button>
+    <button type="button" id="clearBtn">Clear</button>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>  
+            <th>Rice Type</th>
+            <th>Quantity Sold (kg)</th>
+            <th>Selling Price per kg</th>
+            <th>Total Sale Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="salesTable">
+          <!-- Sales rows will appear here -->
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+
+  <!-- Add this where you want the ESP data to appear -->
+  <div id="esp-wifi-data" class="esp-wifi-data">
+    <h3>ESP WiFi Data</h3>
+    <ul id="espDataList"></ul>
+  </div>
+</body>
+</html>

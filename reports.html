@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports - Rice Store Inventory System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="reports.js"></script>
+</head>
+<body>
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggleBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <span class="header-title">Reports</span>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="Inventory.html"><i class="fas fa-boxes"></i> <span>Inventory</span></a></li>
+        <li><a href="sales.html"><i class="fas fa-shopping-cart"></i> <span>Sales</span></a></li>
+        <li><a href="reports.html"><i class="fas fa-chart-line"></i> <span>Reports</span></a></li>
+        <li><a href="history.html"><i class="fas fa-history"></i> <span>History</span></a></li>
+      </ul>
+      <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </aside>
+
+
+     <div class="main-container">
+        <h1>Sales Trending Report</h1>
+        <label for="yearSelector">Select Year:</label>
+        <select id="yearSelector">
+          <option value="2024">2024</option>
+          <option value="2025" selected>2025</option>
+          <option value="2026">2026</option>
+        </select>
+        <h2>Inventory & Sales Line Graph</h2>
+        <canvas id="inventoryChart" width="400" height="200"></canvas>
+        <canvas id="salesLineChart" width="400" height="200"></canvas>
+      </div>
+  </div>
+</body>
+</html>

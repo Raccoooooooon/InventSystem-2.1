@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Firebase SDKs -->
+  <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="dashboard.js"></script>
+</head>
+<body>
+  <!-- Example: Add this header at the top of your <body> in each page -->
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggleBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <span class="header-title">Dashboard</span>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <!-- Sidebar Menu -->
+  <!-- Side Navigation Menu -->
+  <aside class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+      <li><a href="Inventory.html"><i class="fas fa-boxes"></i> Inventory</a></li>
+      <li><a href="sales.html"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+      <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+      <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+    </ul>
+    <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </aside>
+
+  <!-- Content Section -->
+  <div class="main-container">
+    <h1 class="dashboard-title">DASHBOARD</h1>
+    <div class="dashboard-cards">
+      <div class="dashboard-card">
+        <h2>Total Inventory</h2>
+        <p id="inventoryWeight">0 kg</p>
+      </div>
+      <div class="dashboard-card">
+        <h2>Sold</h2>
+        <p id="quantitySold">0 kg</p>
+      </div>
+      <div class="dashboard-card">
+        <h2>Available Stocks</h2>
+        <p id="availableStocks">0 kg</p>
+      </div>
+    </div>
+
+    <h2>Earn</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Earn (₱)</th>
+        </tr>
+      </thead>
+      <tbody id="earnTable"></tbody>
+    </table>
+
+    <h2>Total Value in Inventory</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Total Value (₱)</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryTable"></tbody>
+    </table>
+
+    <h2>Total Sale Value in Sales</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Total Sale Value (₱)</th>
+        </tr>
+      </thead>
+      <tbody id="salesTable"></tbody>
+    </table>
+  </div>
+</body>
+</html>
